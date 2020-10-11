@@ -28,7 +28,6 @@ $(function () {
     })
 
 
-    var url = 'http://ajax.frontend.itheima.net/api/';
     var layer = layui.layer
     //注册表单的提交事件
     $('#form_reg').on('submit', function (e) {
@@ -44,7 +43,7 @@ $(function () {
 
         //ajax的方法
         $.ajax({
-            url: url + 'reguser',
+            url: '/api/reguser',
             method: 'POST',
             data: {
                 username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val()
@@ -64,7 +63,7 @@ $(function () {
     $('#form_login').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url: url + 'login',
+            url: '/api/login',
             method: 'POST',
             data: $(this).serialize(),
             success(res) {
